@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martin Vavrovic - Web Dev & AI Freelancer</title>
+    <title id="page-title">Martin Vavrovic - Web Dev & AI Freelancer</title>
     <style>
         * {
             margin: 0;
@@ -80,7 +80,10 @@
 
         header {
             padding: 2rem 0;
-            position: relative;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            /* Ensure header stays on top */
         }
 
         .header-content {
@@ -528,10 +531,10 @@
                 <div class="logo">solo.geekship</div>
                 <nav>
                     <ul class="nav-links">
-                        <li><a href="#bio">About</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#booking">Book</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#bio" id="nav-about">About</a></li>
+                        <li><a href="#projects" id="nav-projects">Projects</a></li>
+                        <li><a href="#booking" id="nav-book">Book</a></li>
+                        <li><a href="#contact" id="nav-contact">Contact</a></li>
                     </ul>
                 </nav>
                 <div class="language-switcher">
@@ -547,35 +550,40 @@
         <section class="hero">
             <div class="hero-overlay"></div>
             <div class="container hero-content-wrapper">
-                <h1>Martin Vavrovic</h1>
-                <p>Web Developer & AI Specialist crafting innovative solutions for the modern world</p>
-                <a href="#contact" class="cta-button">Let's do something!</a>
+                <h1 id="hero-title">Martin Vavrovic</h1>
+                <p id="hero-subtitle">Web Developer & AI Specialist crafting innovative solutions for the modern world
+                </p>
+                <a href="#contact" class="cta-button" id="hero-cta">Let's do something!</a>
             </div>
         </section>
 
         <section id="bio" class="section">
             <div class="container">
+                <h2 class="section-title" id="bio-section-title">About Me</h2>
                 <div class="bio-content">
                     <div class="bio-image">
                     </div>
                     <div class="bio-text">
-                        <p>Born in Nitra, Slovakia, I'm a passionate developer with over 15 years of experience building
+                        <p id="bio-text-1">Born in Nitra, Slovakia, I'm a passionate developer with over 15 years of
+                            experience building
                             web applications and exploring cutting-edge technologies. My journey spans from C++
                             development to modern React applications and beyond, with a special focus on AI integration
                             and
                             sustainable technology solutions.</p>
 
-                        <p>I've worked across diverse industries - from payroll systems in Austria to mobile apps for
+                        <p id="bio-text-2">I've worked across diverse industries - from payroll systems in Austria to
+                            mobile apps for
                             major German media companies, and most recently Carbon Farming and
                             contributing to <a href="https://www.litefarm.org">LiteFarm</a>.</p>
 
-                        <p>My interests lie at the intersection of technology and sustainability, including AI,
+                        <p id="bio-text-3">My interests lie at the intersection of technology and sustainability,
+                            including AI,
                             renewable energy, AgTech, and water efficiency solutions. Beyond pure development, I explore
                             libertarian philosophy through my Geekship platform, work on alternative innovation systems
                             through SOIL (Scalable Open Innovation Lab), and create content for Arbolis - a TV show and
                             book project that ties it together.</p>
 
-                        <p>I'm always excited to take on projects that combine technical excellence with
+                        <p id="bio-text-4">I'm always excited to take on projects that combine technical excellence with
                             positive impact!</p>
 
                         <div class="tech-stack">
@@ -591,12 +599,13 @@
 
         <section id="projects" class="section">
             <div class="container">
-                <h2 class="section-title">Side Projects / Interests</h2>
+                <h2 class="section-title" id="projects-section-title">Side Projects / Interests</h2>
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-icon">💡</div>
-                        <h3>Geekship.org</h3>
-                        <p>My libertarian philosophy outlet where I explore ideas about freedom, technology, and
+                        <h3 id="project1-title">Geekship.org</h3>
+                        <p id="project1-description">My libertarian philosophy outlet where I explore ideas about
+                            freedom, technology, and
                             society. Writing and sharing thoughts on how technology can enhance individual liberty and
                             social progress.</p>
                         <div class="project-tags">
@@ -608,8 +617,9 @@
 
                     <div class="project-card">
                         <div class="project-icon">🧪</div>
-                        <h3>SOIL - Scalable Open Innovation Lab</h3>
-                        <p>Developing an alternative patent system that promotes open innovation while protecting
+                        <h3 id="project2-title">SOIL - Scalable Open Innovation Lab</h3>
+                        <p id="project2-description">Developing an alternative patent system that promotes open
+                            innovation while protecting
                             creators. Exploring new models for intellectual property that scale with modern
                             collaborative development.</p>
                         <div class="project-tags">
@@ -621,8 +631,9 @@
 
                     <div class="project-card">
                         <div class="project-icon">📺</div>
-                        <h3>Arbolis TV & Book</h3>
-                        <p>Creating content that bridges technology and storytelling. Working on a TV show concept and
+                        <h3 id="project3-title">Arbolis TV & Book</h3>
+                        <p id="project3-description">Creating content that bridges technology and storytelling. Working
+                            on a TV show concept and
                             accompanying book that explores how technology shapes human relationships and society.</p>
                         <div class="project-tags">
                             <span class="project-tag">Content Creation</span>
@@ -633,8 +644,9 @@
 
                     <div class="project-card">
                         <div class="project-icon">🌱</div>
-                        <h3>Sustainable living technologies</h3>
-                        <p>Developing sustainable agriculture solutions using open-source technologies. Contributing
+                        <h3 id="project4-title">Sustainable living technologies</h3>
+                        <p id="project4-description">Developing sustainable agriculture solutions using open-source
+                            technologies. Contributing
                             German localization to LiteFarm.org and building tools for carbon credit tracking.</p>
                         <div class="project-tags">
                             <span class="project-tag">React</span>
@@ -645,8 +657,9 @@
 
                     <div class="project-card">
                         <div class="project-icon">🎓</div>
-                        <h3>Coding Education</h3>
-                        <p>Lead instructor at WBS Coding School, teaching HTML, CSS, JavaScript, React, Node.js, and
+                        <h3 id="project5-title">Coding Education</h3>
+                        <p id="project5-description">Lead instructor at WBS Coding School, teaching HTML, CSS,
+                            JavaScript, React, Node.js, and
                             SQL. Passionate about mentoring the next generation of developers.</p>
                         <div class="project-tags">
                             <span class="project-tag">Education</span>
@@ -657,8 +670,9 @@
 
                     <div class="project-card">
                         <div class="project-icon">🚀</div>
-                        <h3>AI Integration</h3>
-                        <p>Exploring the integration of AI technologies into web applications. Building tools that
+                        <h3 id="project6-title">AI Integration</h3>
+                        <p id="project6-description">Exploring the integration of AI technologies into web applications.
+                            Building tools that
                             leverage machine learning for better user experiences and business insights.</p>
                         <div class="project-tags">
                             <span class="project-tag">AI/ML</span>
@@ -669,8 +683,9 @@
 
                     <div class="project-card">
                         <div class="project-icon">🔗</div>
-                        <h3>Blockchain Exploration</h3>
-                        <p>Researching blockchain applications for sustainable technology and carbon credit systems.
+                        <h3 id="project7-title">Blockchain Exploration</h3>
+                        <p id="project7-description">Researching blockchain applications for sustainable technology and
+                            carbon credit systems.
                             Exploring decentralized solutions for environmental impact tracking.</p>
                         <div class="project-tags">
                             <span class="project-tag">Blockchain</span>
@@ -684,32 +699,35 @@
 
         <section id="booking" class="section">
             <div class="container">
-                <h2 class="section-title">Book a Consultation</h2>
+                <h2 class="section-title" id="booking-section-title">Book a Consultation</h2>
                 <div class="booking-content">
-                    <p>Interested in discussing your project or learning more about how I can help? Book a free
+                    <p id="booking-text">Interested in discussing your project or learning more about how I can help?
+                        Book a free
                         30-minute consultation call.</p>
-                    <a href="YOUR_BOOKING_LINK_HERE" class="cta-button" target="_blank">Book Now</a>
+                    <a href="YOUR_BOOKING_LINK_HERE" class="cta-button" target="_blank" id="booking-button">Book Now</a>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="section">
             <div class="container">
-                <h2 class="section-title">Connect!</h2>
+                <h2 class="section-title" id="contact-section-title">Connect!</h2>
                 <div class="contact-content">
-                    <p>Ready to bring your ideas to life? Whether you need a modern web application, AI integration, or
+                    <p id="contact-text">Ready to bring your ideas to life? Whether you need a modern web application,
+                        AI integration, or
                         sustainable tech solutions, I'm here to help.</p>
                     <div class="contact-links">
-                        <a href="mailto:martin.vavrovic@gmail.com" class="contact-link">
+                        <a href="mailto:martin.vavrovic@gmail.com" class="contact-link" id="contact-email">
                             📧 Email
                         </a>
-                        <a href="https://linkedin.com/in/martin-vavrovic" class="contact-link" target="_blank">
+                        <a href="https://linkedin.com/in/martin-vavrovic" class="contact-link" target="_blank"
+                            id="contact-linkedin">
                             💼 LinkedIn
                         </a>
-                        <a href="https://github.com/ranmacar" class="contact-link" target="_blank">
+                        <a href="https://github.com/ranmacar" class="contact-link" target="_blank" id="contact-github">
                             💻 GitHub
                         </a>
-                        <a href="https://x.com/Ranmacar" class="contact-link" target="_blank">
+                        <a href="https://x.com/Ranmacar" class="contact-link" target="_blank" id="contact-twitter">
                             🐦 X/Twitter
                         </a>
                     </div>
@@ -720,11 +738,155 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Martin Vavrovic. Building the future, one line of code at a time.</p>
+            <p id="footer-text">&copy; 2025 Martin Vavrovic. Building the future, one line of code at a time.</p>
         </div>
     </footer>
 
     <script>
+        // Translations object
+        const translations = {
+            en: {
+                'page-title': 'Martin Vavrovic - Web Dev & AI Freelancer',
+                'nav-about': 'About',
+                'nav-projects': 'Projects',
+                'nav-book': 'Book',
+                'nav-contact': 'Contact',
+                'hero-subtitle': 'Web Developer & AI Specialist crafting innovative solutions for the modern world',
+                'hero-cta': 'Let\'s do something!',
+                'bio-section-title': 'About Me',
+                'bio-text-1': 'Born in Nitra, Slovakia, I\'m a passionate developer with over 15 years of experience building web applications and exploring cutting-edge technologies. My journey spans from C++ development to modern React applications and beyond, with a special focus on AI integration and sustainable technology solutions.',
+                'bio-text-2': 'I\'ve worked across diverse industries - from payroll systems in Austria to mobile apps for major German media companies, and most recently Carbon Farming and contributing to <a href="https://www.litefarm.org">LiteFarm</a>.',
+                'bio-text-3': 'My interests lie at the intersection of technology and sustainability, including AI, renewable energy, AgTech, and water efficiency solutions. Beyond pure development, I explore libertarian philosophy through my Geekship platform, work on alternative innovation systems through SOIL (Scalable Open Innovation Lab), and create content for Arbolis - a TV show and book project that ties it together.',
+                'bio-text-4': 'I\'m always excited to take on projects that combine technical excellence with positive impact!',
+                'projects-section-title': 'Side Projects / Interests',
+                'project1-title': 'Geekship.org',
+                'project1-description': 'My libertarian philosophy outlet where I explore ideas about freedom, technology, and society. Writing and sharing thoughts on how technology can enhance individual liberty and social progress.',
+                'project2-title': 'SOIL - Scalable Open Innovation Lab',
+                'project2-description': 'Developing an alternative patent system that promotes open innovation while protecting creators. Exploring new models for intellectual property that scale with modern collaborative development.',
+                'project3-title': 'Arbolis TV & Book',
+                'project3-description': 'Creating content that bridges technology and storytelling. Working on a TV show concept and accompanying book that explores how technology shapes human relationships and society.',
+                'project4-title': 'Sustainable living technologies',
+                'project4-description': 'Developing sustainable agriculture solutions using open-source technologies. Contributing German localization to LiteFarm.org and building tools for carbon credit tracking.',
+                'project5-title': 'Coding Education',
+                'project5-description': 'Lead instructor at WBS Coding School, teaching HTML, CSS, JavaScript, React, Node.js, and SQL. Passionate about mentoring the next generation of developers.',
+                'project6-title': 'AI Integration',
+                'project6-description': 'Exploring the integration of AI technologies into web applications. Building tools that leverage machine learning for better user experiences and business insights.',
+                'project7-title': 'Blockchain Exploration',
+                'project7-description': 'Researching blockchain applications for sustainable technology and carbon credit systems. Exploring decentralized solutions for environmental impact tracking.',
+                'booking-section-title': 'Book a Consultation',
+                'booking-text': 'Interested in discussing your project or learning more about how I can help? Book a free 30-minute consultation call.',
+                'booking-button': 'Book Now',
+                'contact-section-title': 'Connect!',
+                'contact-text': 'Ready to bring your ideas to life? Whether you need a modern web application, AI integration, or sustainable tech solutions, I\'m here to help.',
+                'contact-email': '📧 Email',
+                'contact-linkedin': '💼 LinkedIn',
+                'contact-github': '💻 GitHub',
+                'contact-twitter': '🐦 X/Twitter',
+                'footer-text': '&copy; 2025 Martin Vavrovic. Building the future, one line of code at a time.'
+            },
+            sk: {
+                'page-title': 'Martin Vavrovič - Web Developer & AI Špecialista',
+                'nav-about': 'O mne',
+                'nav-projects': 'Projekty',
+                'nav-book': 'Rezervovať',
+                'nav-contact': 'Kontakt',
+                'hero-subtitle': 'Web Developer a AI Špecialista tvoriaci inovatívne riešenia pre moderný svet',
+                'hero-cta': 'Poďme niečo vytvoriť!',
+                'bio-section-title': 'O mne',
+                'bio-text-1': 'Narodil som sa v Nitre na Slovensku a som vášnivý vývojár s viac ako 15-ročnými skúsenosťami s tvorbou webových aplikácií a skúmaním špičkových technológií. Moja cesta siaha od vývoja v C++ po moderné React aplikácie a ďalej, so špeciálnym zameraním na integráciu AI a udržateľné technologické riešenia.',
+                'bio-text-2': 'Pracoval som v rôznych odvetviach - od mzdových systémov v Rakúsku po mobilné aplikácie pre významné nemecké mediálne spoločnosti a najnovšie aj v oblasti Carbon Farmingu a prispievam do <a href="https://www.litefarm.org">LiteFarm</a>.',
+                'bio-text-3': 'Moje záujmy ležia na priesečníku technológií a udržateľnosti, vrátane AI, obnoviteľnej energie, AgTech a riešení pre efektívne využívanie vody. Okrem čistého vývoja skúmam libertariánsku filozofiu prostredníctvom mojej platformy Geekship, pracujem na alternatívnych inovačných systémoch prostredníctvom SOIL (Scalable Open Innovation Lab) a tvorím obsah pre Arbolis - televíznu reláciu a knižný projekt, ktorý to všetko spája.',
+                'bio-text-4': 'Vždy sa teším na projekty, ktoré spájajú technickú excelentnosť s pozitívnym dopadom!',
+                'projects-section-title': 'Vedľajšie projekty / Záujmy',
+                'project1-title': 'Geekship.org',
+                'project1-description': 'Môj libertariánsky filozofický výstup, kde skúmam myšlienky o slobode, technológiách a spoločnosti. Píšem a zdieľam myšlienky o tom, ako technológie môžu posilniť individuálnu slobodu a sociálny pokrok.',
+                'project2-title': 'SOIL - Scalable Open Innovation Lab',
+                'project2-description': 'Vývoj alternatívneho patentového systému, ktorý podporuje otvorenú inováciu a zároveň chráni tvorcov. Skúmanie nových modelov duševného vlastníctva, ktoré sa škálujú s moderným kolaboratívnym vývojom.',
+                'project3-title': 'Arbolis TV & Kniha',
+                'project3-description': 'Tvorba obsahu, ktorý spája technológie a rozprávanie príbehov. Práca na koncepte televíznej relácie a sprievodnej knihe, ktorá skúma, ako technológie formujú ľudské vzťahy a spoločnosť.',
+                'project4-title': 'Technológie pre udržateľný život',
+                'project4-description': 'Vývoj riešení pre udržateľné poľnohospodárstvo pomocou open-source technológií. Prispievanie nemeckou lokalizáciou do LiteFarm.org a tvorba nástrojov na sledovanie uhlíkových kreditov.',
+                'project5-title': 'Vzdelávanie v kódovaní',
+                'project5-description': 'Hlavný inštruktor na WBS Coding School, vyučujúci HTML, CSS, JavaScript, React, Node.js a SQL. Nadšený mentorovaním ďalšej generácie vývojárov.',
+                'project6-title': 'Integrácia AI',
+                'project6-description': 'Skúmanie integrácie AI technológií do webových aplikácií. Tvorba nástrojov, ktoré využívajú strojové učenie pre lepšie používateľské skúsenosti a obchodné poznatky.',
+                'project7-title': 'Prieskum Blockchainu',
+                'project7-description': 'Výskum aplikácií blockchainu pre udržateľné technológie a systémy uhlíkových kreditov. Skúmanie decentralizovaných riešení pre sledovanie environmentálneho dopadu.',
+                'booking-section-title': 'Rezervovať konzultáciu',
+                'booking-text': 'Máte záujem prediskutovať váš projekt alebo sa dozvedieť viac o tom, ako vám môžem pomôcť? Rezervujte si bezplatnú 30-minútovú konzultáciu.',
+                'booking-button': 'Rezervovať teraz',
+                'contact-section-title': 'Spojte sa!',
+                'contact-text': 'Ste pripravení oživiť svoje nápady? Či už potrebujete modernú webovú aplikáciu, integráciu AI alebo riešenia pre udržateľné technológie, som tu, aby som vám pomohol.',
+                'contact-email': '📧 Email',
+                'contact-linkedin': '💼 LinkedIn',
+                'contact-github': '💻 GitHub',
+                'contact-twitter': '🐦 X/Twitter',
+                'footer-text': '&copy; 2025 Martin Vavrovič. Budovanie budúcnosti, jeden riadok kódu za druhým.'
+            },
+            de: {
+                'page-title': 'Martin Vavrovic - Webentwickler & KI Spezialist',
+                'nav-about': 'Über mich',
+                'nav-projects': 'Projekte',
+                'nav-book': 'Buchen',
+                'nav-contact': 'Kontakt',
+                'hero-subtitle': 'Webentwickler & KI Spezialist, der innovative Lösungen für die moderne Welt entwickelt',
+                'hero-cta': 'Lass uns etwas schaffen!',
+                'bio-section-title': 'Über mich',
+                'bio-text-1': 'Geboren in Nitra, Slowakei, bin ich ein leidenschaftlicher Entwickler mit über 15 Jahren Erfahrung in der Erstellung von Webanwendungen und der Erforschung modernster Technologien. Meine Reise reicht von der C++-Entwicklung bis hin zu modernen React-Anwendungen und darüber hinaus, mit einem besonderen Fokus auf KI-Integration und nachhaltige Technologielösungen.',
+                'bio-text-2': 'Ich habe in verschiedenen Branchen gearbeitet - von Gehaltsabrechnungssystemen in Österreich über mobile Apps für große deutsche Medienunternehmen bis hin zu jüngsten Projekten im Bereich Carbon Farming und der Mitarbeit an <a href="https://www.litefarm.org">LiteFarm</a>.',
+                'bio-text-3': 'Meine Interessen liegen an der Schnittstelle von Technologie und Nachhaltigkeit, einschließlich KI, erneuerbarer Energien, AgTech und Lösungen zur Wassereffizienz. Neben der reinen Entwicklung erkunde ich die libertäre Philosophie über meine Geekship-Plattform, arbeite an alternativen Innovationssystemen über SOIL (Scalable Open Innovation Lab) und erstelle Inhalte für Arbolis - ein TV-Show- und Buchprojekt, das alles verbindet.',
+                'bio-text-4': 'Ich freue mich immer darauf, Projekte anzunehmen, die technische Exzellenz mit positivem Einfluss verbinden!',
+                'projects-section-title': 'Nebenprojekte / Interessen',
+                'project1-title': 'Geekship.org',
+                'project1-description': 'Mein libertäres Philosophie-Outlet, in dem ich Ideen über Freiheit, Technologie und Gesellschaft untersuche. Schreiben und Teilen von Gedanken darüber, wie Technologie die individuelle Freiheit und den sozialen Fortschritt verbessern kann.',
+                'project2-title': 'SOIL - Scalable Open Innovation Lab',
+                'project2-description': 'Entwicklung eines alternativen Patentsystems, das offene Innovation fördert und gleichzeitig Schöpfer schützt. Erforschung neuer Modelle für geistiges Eigentum, die mit moderner kollaborativer Entwicklung skalieren.',
+                'project3-title': 'Arbolis TV & Buch',
+                'project3-description': 'Erstellung von Inhalten, die Technologie und Storytelling verbinden. Arbeit an einem TV-Show-Konzept und begleitendem Buch, das untersucht, wie Technologie menschliche Beziehungen und die Gesellschaft prägt.',
+                'project4-title': 'Technologien für nachhaltiges Leben',
+                'project4-description': 'Entwicklung nachhaltiger Landwirtschaftslösungen mit Open-Source-Technologien. Beitrag zur deutschen Lokalisierung von LiteFarm.org und Erstellung von Tools zur Verfolgung von Kohlenstoffgutschriften.',
+                'project5-title': 'Coding Ausbildung',
+                'project5-description': 'Hauptdozent an der WBS Coding School, unterrichte HTML, CSS, JavaScript, React, Node.js und SQL. Leidenschaftlich daran interessiert, die nächste Generation von Entwicklern zu betreuen.',
+                'project6-title': 'KI Integration',
+                'project6-description': 'Erforschung der Integration von KI-Technologien in Webanwendungen. Erstellung von Tools, die maschinelles Lernen für bessere Benutzererlebnisse und Geschäftseinblicke nutzen.',
+                'project7-title': 'Blockchain Erkundung',
+                'project7-description': 'Erforschung von Blockchain-Anwendungen für nachhaltige Technologie- und Kohlenstoffkreditsysteme. Erforschung dezentraler Lösungen zur Verfolgung von Umweltauswirkungen.',
+                'booking-section-title': 'Beratung buchen',
+                'booking-text': 'Möchten Sie Ihr Projekt besprechen oder mehr darüber erfahren, wie ich Ihnen helfen kann? Buchen Sie ein kostenloses 30-minütiges Beratungsgespräch.',
+                'booking-button': 'Jetzt buchen',
+                'contact-section-title': 'Vernetzen Sie sich!',
+                'contact-text': 'Bereit, Ihre Ideen zum Leben zu erwecken? Ob Sie eine moderne Webanwendung, KI-Integration oder nachhaltige Technologielösungen benötigen, ich bin hier, um Ihnen zu helfen.',
+                'contact-email': '📧 E-Mail',
+                'contact-linkedin': '💼 LinkedIn',
+                'contact-github': '💻 GitHub',
+                'contact-twitter': '🐦 X/Twitter',
+                'footer-text': '&copy; 2025 Martin Vavrovic. Die Zukunft bauen, eine Codezeile nach der anderen.'
+            }
+        };
+
+        // Function to update text content based on language
+        function updateContent(lang) {
+            const elementsToTranslate = translations[lang];
+            if (!elementsToTranslate) return;
+
+            for (const id in elementsToTranslate) {
+                const element = document.getElementById(id);
+                if (element) {
+                    // Check if the translation contains HTML (like the LiteFarm link)
+                    if (elementsToTranslate[id].includes('<a href=')) {
+                        element.innerHTML = elementsToTranslate[id];
+                    } else {
+                        element.textContent = elementsToTranslate[id];
+                    }
+                }
+            }
+            // Update the title tag separately
+            const titleElement = document.getElementById('page-title');
+            if (titleElement && translations[lang]['page-title']) {
+                titleElement.textContent = translations[lang]['page-title'];
+            }
+        }
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -768,6 +930,44 @@
                 this.style.transform = 'translateY(0) scale(1)';
             });
         });
+
+        // Language switcher functionality
+        document.querySelectorAll('.language-flag').forEach(flag => {
+            flag.addEventListener('click', function () {
+                // Remove selected class from all flags
+                document.querySelectorAll('.language-flag').forEach(f => f.classList.remove('selected-language'));
+
+                // Add selected class to the clicked flag
+                this.classList.add('selected-language');
+
+                // Change the language of the html tag
+                const selectedLang = this.getAttribute('data-lang');
+                document.documentElement.lang = selectedLang;
+
+                // Update content based on selected language
+                updateContent(selectedLang);
+
+                // Optional: Store selected language in local storage
+                localStorage.setItem('selectedLanguage', selectedLang);
+            });
+        });
+
+        // Optional: Load selected language from local storage on page load
+        const savedLanguage = localStorage.getItem('selectedLanguage');
+        if (savedLanguage) {
+            document.documentElement.lang = savedLanguage;
+            document.querySelectorAll('.language-flag').forEach(flag => {
+                flag.classList.remove('selected-language');
+                if (flag.getAttribute('data-lang') === savedLanguage) {
+                    flag.classList.add('selected-language');
+                }
+            });
+            // Update content based on saved language
+            updateContent(savedLanguage);
+        } else {
+            // If no language is saved, use the default language (en)
+            updateContent('en');
+        }
     </script>
 </body>
 
