@@ -703,7 +703,7 @@
                 <div class="booking-content">
                     <p id="booking-text">Interested in discussing your project or learning more about how I can help?
                         Book a free
-                        30-minute consultation call.</p>
+                        15-minute consultation call.</p>
                     <a href="YOUR_BOOKING_LINK_HERE" class="cta-button" target="_blank" id="booking-button">Book Now</a>
                 </div>
             </div>
@@ -774,7 +774,7 @@
                 'project7-title': 'Blockchain Exploration',
                 'project7-description': 'Researching blockchain applications for sustainable technology and carbon credit systems. Exploring decentralized solutions for environmental impact tracking.',
                 'booking-section-title': 'Book a Consultation',
-                'booking-text': 'Interested in discussing your project or learning more about how I can help? Book a free 30-minute consultation call.',
+                'booking-text': 'Interested in discussing your project or learning more about how I can help? Book a free 15-minute consultation call.',
                 'booking-button': 'Book Now',
                 'contact-section-title': 'Connect!',
                 'contact-text': 'Ready to bring your ideas to life? Whether you need a modern web application, AI integration, or sustainable tech solutions, I\'m here to help.',
@@ -813,7 +813,7 @@
                 'project7-title': 'Prieskum Blockchainu',
                 'project7-description': 'Výskum aplikácií blockchainu pre udržateľné technológie a systémy uhlíkových kreditov. Skúmanie decentralizovaných riešení pre sledovanie environmentálneho dopadu.',
                 'booking-section-title': 'Rezervovať konzultáciu',
-                'booking-text': 'Máte záujem prediskutovať váš projekt alebo sa dozvedieť viac o tom, ako vám môžem pomôcť? Rezervujte si bezplatnú 30-minútovú konzultáciu.',
+                'booking-text': 'Máte záujem prediskutovať váš projekt alebo sa dozvedieť viac o tom, ako vám môžem pomôcť? Rezervujte si bezplatnú 15-minútovú konzultáciu.',
                 'booking-button': 'Rezervovať teraz',
                 'contact-section-title': 'Spojte sa!',
                 'contact-text': 'Ste pripravení oživiť svoje nápady? Či už potrebujete modernú webovú aplikáciu, integráciu AI alebo riešenia pre udržateľné technológie, som tu, aby som vám pomohol.',
@@ -852,7 +852,7 @@
                 'project7-title': 'Blockchain Erkundung',
                 'project7-description': 'Erforschung von Blockchain-Anwendungen für nachhaltige Technologie- und Kohlenstoffkreditsysteme. Erforschung dezentraler Lösungen zur Verfolgung von Umweltauswirkungen.',
                 'booking-section-title': 'Beratung buchen',
-                'booking-text': 'Möchten Sie Ihr Projekt besprechen oder mehr darüber erfahren, wie ich Ihnen helfen kann? Buchen Sie ein kostenloses 30-minütiges Beratungsgespräch.',
+                'booking-text': 'Möchten Sie Ihr Projekt besprechen oder mehr darüber erfahren, wie ich Ihnen helfen kann? Buchen Sie ein kostenloses 15-minütiges Beratungsgespräch.',
                 'booking-button': 'Jetzt buchen',
                 'contact-section-title': 'Vernetzen Sie sich!',
                 'contact-text': 'Bereit, Ihre Ideen zum Leben zu erwecken? Ob Sie eine moderne Webanwendung, KI-Integration oder nachhaltige Technologielösungen benötigen, ich bin hier, um Ihnen zu helfen.',
@@ -864,26 +864,63 @@
             }
         };
 
-        // Function to update text content based on language
+        // Function to update text content based on language with staggered word-by-word replacement animation
         function updateContent(lang) {
             const elementsToTranslate = translations[lang];
             if (!elementsToTranslate) return;
 
-            for (const id in elementsToTranslate) {
+            const wordDelay = 50; // Milliseconds delay between word changes
+            const elementStaggerDelay = 100; // Milliseconds delay between element animations
+
+            Object.entries(elementsToTranslate).forEach(([id, targetText], index) => {
                 const element = document.getElementById(id);
                 if (element) {
-                    // Check if the translation contains HTML (like the LiteFarm link)
-                    if (elementsToTranslate[id].includes('<a href=')) {
-                        element.innerHTML = elementsToTranslate[id];
-                    } else {
-                        element.textContent = elementsToTranslate[id];
-                    }
+                    // Add a staggered delay before starting the animation for this element
+                    setTimeout(() => {
+                        // Handle HTML content separately (no word-by-word animation for now)
+                        if (targetText.includes('<a href=')) {
+                            element.innerHTML = targetText;
+                            return; // Exit this element's animation
+                        }
+
+                        const originalText = element.textContent;
+                        const originalWords = originalText.split(' ');
+                        const targetWords = targetText.split(' ');
+
+                        for (let i = 0; i < Math.max(originalWords.length, targetWords.length); i++) {
+                            setTimeout(() => {
+                                let newText = '';
+                                for (let j = 0; j < Math.max(originalWords.length, targetWords.length); j++) {
+                                    if (j < i) {
+                                        // Use target word if available (already translated)
+                                        newText += (targetWords[j] || '') + ' ';
+                                    } else if (j === i) {
+                                        // Use target word and make it bold (currently translating)
+                                        newText += '<strong>' + (targetWords[j] || '') + '</strong> ';
+                                    } else {
+                                        // Use original word if available (not yet translated)
+                                        newText += (originalWords[j] || '') + ' ';
+                                    }
+                                }
+                                element.innerHTML = newText.trim(); // Use innerHTML to render bold tags
+                            }, wordDelay * i);
+                        }
+
+                        // Remove bolding after the animation is complete
+                        setTimeout(() => {
+                            element.innerHTML = targetText; // Set to the final translated text without bolding
+                        }, wordDelay * Math.max(originalWords.length, targetWords.length));
+
+                    }, elementStaggerDelay * index); // Stagger delay based on element index
                 }
-            }
-            // Update the title tag separately
+            });
+
+            // Update the title tag separately with a staggered delay
             const titleElement = document.getElementById('page-title');
             if (titleElement && translations[lang]['page-title']) {
-                titleElement.textContent = translations[lang]['page-title'];
+                setTimeout(() => {
+                    titleElement.textContent = translations[lang]['page-title'];
+                }, elementStaggerDelay * Object.keys(elementsToTranslate).length); // Delay after other elements
             }
         }
 
