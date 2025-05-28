@@ -411,6 +411,7 @@
 
         .contact-link {
             display: flex;
+            flex-direction: column;
             align-items: center;
             gap: 0.5rem;
             color: #d1d5db;
@@ -420,6 +421,15 @@
             border-radius: 15px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
+            min-width: 120px;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+        }
+
+        .contact-text {
+            font-size: 0.9rem;
         }
 
         .contact-link:hover {
@@ -494,8 +504,10 @@
             }
 
             .contact-links {
-                flex-direction: column;
-                align-items: center;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
             }
 
             .projects-links {
@@ -603,7 +615,7 @@
                 <h2 class="section-title" id="projects-section-title">Projects / Interests</h2>
                 <div class="projects-grid">
                     <div class="project-card">
-                        <div class="project-icon">💡</div>
+                        <div class="project-icon"></div>
                         <h3 id="project1-title">Geekship.org</h3>
                         <p id="project1-description">My libertarian philosophy outlet where I explore ideas about
                             freedom, technology, and
@@ -617,7 +629,7 @@
                     </div>
 
                     <div class="project-card">
-                        <div class="project-icon">🧪</div>
+                        <div class="project-icon">💡</div>
                         <h3 id="project2-title">SOIL - Scalable Open Innovation Lab</h3>
                         <p id="project2-description">Developing an alternative patent system that promotes open
                             innovation while protecting
@@ -719,17 +731,24 @@
                         sustainable tech solutions, I'm here to help.</p>
                     <div class="contact-links">
                         <a href="mailto:martin.vavrovic@gmail.com" class="contact-link" id="contact-email">
-                            📧 Email
+                            <span class="contact-icon"><img src="https://img.icons8.com/color/48/000000/email.png"
+                                    alt="Email" width="32" height="32"></span> <span class="contact-text">Email</span>
                         </a>
                         <a href="https://linkedin.com/in/martin-vavrovic" class="contact-link" target="_blank"
                             id="contact-linkedin">
-                            💼 LinkedIn
+                            <span class="contact-icon"><img
+                                    src="https://static.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico"
+                                    alt="LinkedIn" width="32" height="32"></span> <span
+                                class="contact-text">LinkedIn</span>
                         </a>
                         <a href="https://github.com/ranmacar" class="contact-link" target="_blank" id="contact-github">
-                            💻 GitHub
+                            <span class="contact-icon"><img src="https://github.githubassets.com/favicon.ico"
+                                    alt="GitHub" width="32" height="32"></span> <span class="contact-text">GitHub</span>
                         </a>
                         <a href="https://x.com/Ranmacar" class="contact-link" target="_blank" id="contact-twitter">
-                            🐦 X/Twitter
+                            <span class="contact-icon"><img src="https://abs.twimg.com/favicons/twitter.ico"
+                                    alt="X/Twitter" width="32" height="32"></span> <span
+                                class="contact-text">X/Twitter</span>
                         </a>
                     </div>
                 </div>
@@ -779,10 +798,10 @@
                 'booking-button': 'Book Now',
                 'contact-section-title': 'Connect!',
                 'contact-text': 'Ready to bring your ideas to life? Whether you need a modern web application, AI integration, or sustainable tech solutions, I\'m here to help.',
-                'contact-email': '📧 Email',
-                'contact-linkedin': '💼 LinkedIn',
-                'contact-github': '💻 GitHub',
-                'contact-twitter': '🐦 X/Twitter',
+                'contact-email': '<span class="contact-icon"><img src="https://img.icons8.com/color/48/000000/email.png" alt="Email" width="32" height="32"></span> <span class="contact-text">Email</span>',
+                'contact-linkedin': '<span class="contact-icon"><img src="https://static.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico" alt="LinkedIn" width="32" height="32"></span> <span class="contact-text">LinkedIn</span>',
+                'contact-github': '<span class="contact-icon"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="32" height="32"></span> <span class="contact-text">GitHub</span>',
+                'contact-twitter': '<span class="contact-icon">𝕏</span> <span class="contact-text">X/Twitter</span>',
                 'footer-text': '&copy; 2025 Martin Vavrovic. Building the future, one line of code at a time.'
             },
             sk: {
@@ -818,10 +837,10 @@
                 'booking-button': 'Objednať',
                 'contact-section-title': 'Spojme sa!',
                 'contact-text': 'Ste pripravení premeniť svoje nápady na realitu? Či už potrebujete modernú webovú aplikáciu, integráciu AI alebo udržateľné technologické riešenia, rád vám pomôžem.',
-                'contact-email': '📧 E-mail',
-                'contact-linkedin': '💼 LinkedIn',
-                'contact-github': '💻 GitHub',
-                'contact-twitter': '🐦 X/Twitter',
+                'contact-email': '<span class="contact-icon"><img src="https://img.icons8.com/color/48/000000/email.png" alt="Email" width="32" height="32"></span> <span class="contact-text">E-mail</span>',
+                'contact-linkedin': '<span class="contact-icon"><img src="https://static.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico" alt="LinkedIn" width="32" height="32"></span> <span class="contact-text">LinkedIn</span>',
+                'contact-github': '<span class="contact-icon"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="32" height="32"></span> <span class="contact-text">GitHub</span>',
+                'contact-twitter': '<span class="contact-icon">𝕏</span> <span class="contact-text">X/Twitter</span>',
                 'footer-text': '&copy; 2025 Martin Vavrovič. Tvoríme budúcnosť, riadok kódu po riadku.'
             },
             de: {
@@ -857,10 +876,10 @@
                 'booking-button': 'Termin vereinbaren',
                 'contact-section-title': 'Kontaktieren Sie mich!',
                 'contact-text': 'Bereit, Ihre Ideen Wirklichkeit werden zu lassen? Ob moderne Webanwendung, KI-Integration oder nachhaltige Technologielösungen – ich unterstütze Sie gerne.',
-                'contact-email': '📧 E-Mail',
-                'contact-linkedin': '💼 LinkedIn',
-                'contact-github': '💻 GitHub',
-                'contact-twitter': '🐦 X/Twitter',
+                'contact-email': '<span class="contact-icon"><img src="https://img.icons8.com/color/48/000000/email.png" alt="Email" width="32" height="32"></span> <span class="contact-text">E-Mail</span>',
+                'contact-linkedin': '<span class="contact-icon"><img src="https://static.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico" alt="LinkedIn" width="32" height="32"></span> <span class="contact-text">LinkedIn</span>',
+                'contact-github': '<span class="contact-icon"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="32" height="32"></span> <span class="contact-text">GitHub</span>',
+                'contact-twitter': '<span class="contact-icon">𝕏</span> <span class="contact-text">X/Twitter</span>',
                 'footer-text': '&copy; 2025 Martin Vavrovic. Wir gestalten die Zukunft – Zeile für Zeile.'
             }
         };
@@ -868,60 +887,18 @@
         // Function to update text content based on language with staggered word-by-word replacement animation
         function updateContent(lang) {
             const elementsToTranslate = translations[lang];
-            if (!elementsToTranslate) return;
-
-            const wordDelay = 50; // Milliseconds delay between word changes
-            const elementStaggerDelay = 100; // Milliseconds delay between element animations
 
             Object.entries(elementsToTranslate).forEach(([id, targetText], index) => {
                 const element = document.getElementById(id);
                 if (element) {
-                    // Add a staggered delay before starting the animation for this element
-                    setTimeout(() => {
-                        // Handle HTML content separately (no word-by-word animation for now)
-                        if (targetText.includes('<a href=')) {
-                            element.innerHTML = targetText;
-                            return; // Exit this element's animation
-                        }
-
-                        const originalText = element.textContent;
-                        const originalWords = originalText.split(' ');
-                        const targetWords = targetText.split(' ');
-
-                        for (let i = 0; i < Math.max(originalWords.length, targetWords.length); i++) {
-                            setTimeout(() => {
-                                let newText = '';
-                                for (let j = 0; j < Math.max(originalWords.length, targetWords.length); j++) {
-                                    if (j < i) {
-                                        // Use target word if available (already translated)
-                                        newText += (targetWords[j] || '') + ' ';
-                                    } else if (j === i) {
-                                        // Use target word and make it bold (currently translating)
-                                        newText += '<strong>' + (targetWords[j] || '') + '</strong> ';
-                                    } else {
-                                        // Use original word if available (not yet translated)
-                                        newText += (originalWords[j] || '') + ' ';
-                                    }
-                                }
-                                element.innerHTML = newText.trim(); // Use innerHTML to render bold tags
-                            }, wordDelay * i);
-                        }
-
-                        // Remove bolding after the animation is complete
-                        setTimeout(() => {
-                            element.innerHTML = targetText; // Set to the final translated text without bolding
-                        }, wordDelay * Math.max(originalWords.length, targetWords.length));
-
-                    }, elementStaggerDelay * index); // Stagger delay based on element index
+                    element.innerHTML = targetText; // Clear existing content
                 }
             });
 
             // Update the title tag separately with a staggered delay
             const titleElement = document.getElementById('page-title');
             if (titleElement && translations[lang]['page-title']) {
-                setTimeout(() => {
-                    titleElement.textContent = translations[lang]['page-title'];
-                }, elementStaggerDelay * Object.keys(elementsToTranslate).length); // Delay after other elements
+                titleElement.textContent = translations[lang]['page-title'];
             }
         }
 
@@ -990,22 +967,6 @@
             });
         });
 
-        // Optional: Load selected language from local storage on page load
-        const savedLanguage = localStorage.getItem('selectedLanguage');
-        if (savedLanguage) {
-            document.documentElement.lang = savedLanguage;
-            document.querySelectorAll('.language-flag').forEach(flag => {
-                flag.classList.remove('selected-language');
-                if (flag.getAttribute('data-lang') === savedLanguage) {
-                    flag.classList.add('selected-language');
-                }
-            });
-            // Update content based on saved language
-            updateContent(savedLanguage);
-        } else {
-            // If no language is saved, use the default language (en)
-            updateContent('en');
-        }
     </script>
 </body>
 
