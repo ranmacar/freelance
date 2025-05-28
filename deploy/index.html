@@ -23,10 +23,9 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
         }
 
-        /* Animated background */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -50,7 +49,6 @@
             }
         }
 
-        /* Projects header */
         .projects-header {
             padding: 0.5rem 0;
             background: rgba(0, 0, 0, 0.3);
@@ -61,7 +59,7 @@
         .projects-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .projects-links a {
@@ -79,11 +77,17 @@
         }
 
         header {
-            padding: 2rem 0;
+            padding: 1.5rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            /* Ensure header stays on top */
+            transition: padding 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 0.5rem 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
         }
 
         .header-content {
@@ -92,7 +96,7 @@
             align-items: center;
             backdrop-filter: blur(10px);
             background: rgba(255, 255, 255, 0.05);
-            padding: 1.5rem 2rem;
+            padding: 1rem 1.5rem;
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -109,7 +113,7 @@
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             list-style: none;
         }
 
@@ -121,7 +125,8 @@
             position: relative;
         }
 
-        .nav-links a:hover {
+        .nav-links a:hover,
+        .nav-links a:focus {
             color: #3b82f6;
             transform: translateY(-2px);
         }
@@ -138,50 +143,42 @@
             transform: translateX(-50%);
         }
 
-        .nav-links a:hover::after {
+        .nav-links a:hover::after,
+        .nav-links a:focus::after {
             width: 100%;
         }
 
-        /* Language Switcher */
         .language-switcher {
-            margin-left: 2rem;
+            margin-left: 1.5rem;
             display: flex;
-            gap: 10px;
-            /* Space between flags */
+            gap: 8px;
             align-items: center;
-            font-size: 1.8rem;
-            /* Adjust size of emojis */
+            font-size: 1.6rem;
         }
 
         .language-flag {
             cursor: pointer;
             opacity: 0.5;
-            /* Slightly dim non-selected flags */
             transition: all 0.3s ease;
             line-height: 1;
-            /* Adjust line height for better alignment */
         }
 
-        .language-flag:hover {
+        .language-flag:hover,
+        .language-flag:focus {
             opacity: 1;
         }
 
         .language-flag.selected-language {
-            font-size: 2.2rem;
-            /* Slightly larger for selected flag */
+            font-size: 2rem;
             opacity: 1;
         }
 
-        /* Hero Section */
         .hero {
-            padding: 4rem 0;
+            padding: 3rem 0;
             text-align: center;
             position: relative;
-            /* Needed for absolute positioning of overlay */
-            /* Add a background image to the hero section */
             background: url('supertree-grove-02.jpg') center/cover no-repeat;
             overflow: hidden;
-            /* Hide overflow from potential blur */
         }
 
         .hero-overlay {
@@ -190,22 +187,18 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            /* Dark semi-transparent overlay */
+            background: rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(5px);
-            /* Apply blur effect */
             z-index: 1;
-            /* Ensure overlay is above background but below content */
         }
 
         .hero-content-wrapper {
             position: relative;
             z-index: 2;
-            /* Ensure content is above the overlay */
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
             color: #3b82f6;
             text-shadow: 3px 3px 5px black;
             font-weight: 800;
@@ -214,10 +207,10 @@
         }
 
         .hero p {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: #d1d5db;
             text-shadow: 3px 3px 5px black;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
@@ -226,7 +219,7 @@
 
         .cta-button {
             display: inline-block;
-            padding: 1rem 2rem;
+            padding: 0.8rem 1.8rem;
             background: linear-gradient(135deg, #3b82f6, #8b5cf6);
             color: white;
             text-decoration: none;
@@ -237,46 +230,40 @@
             animation: fadeInUp 1s ease-out 0.4s both;
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
+        .cta-button:hover,
+        .cta-button:focus {
+            transform: translateY(-3px) scale(1.05);
             box-shadow: 0 8px 25px rgba(59, 130, 246, 0.6);
         }
 
-        /* Sections */
         .section {
-            padding: 4rem 0;
-            margin-bottom: 2rem;
+            padding: 3rem 0;
+            margin-bottom: 1.5rem;
         }
 
         .section-title {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 700;
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
             background: linear-gradient(135deg, #ffffff, #3b82f6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        /* Bio Section */
         .bio-content {
             display: grid;
             grid-template-columns: 1fr 2fr;
-            gap: 3rem;
+            gap: 2rem;
             align-items: center;
         }
 
         .bio-image {
-            width: 300px;
-            height: 300px;
+            width: 280px;
+            height: 280px;
             border-radius: 20px;
             background: url('face.jpg') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 6rem;
-            color: white;
             margin: 0 auto;
             box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
         }
@@ -290,26 +277,26 @@
         .bio-text h3 {
             color: #ffffff;
             margin-bottom: 1rem;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
 
         .bio-text p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
         .tech-stack {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin-top: 1.5rem;
+            margin-top: 1.2rem;
         }
 
         .tech-tag {
-            padding: 0.5rem 1rem;
+            padding: 0.4rem 0.9rem;
             background: rgba(59, 130, 246, 0.2);
             border: 1px solid rgba(59, 130, 246, 0.3);
             border-radius: 25px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #93c5fd;
             transition: all 0.3s ease;
         }
@@ -319,11 +306,10 @@
             transform: translateY(-2px);
         }
 
-        /* Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
         }
 
         .project-card {
@@ -331,7 +317,7 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
-            padding: 2rem;
+            padding: 1.5rem;
             transition: all 0.3s ease;
             cursor: pointer;
         }
@@ -343,27 +329,27 @@
         }
 
         .project-icon {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-            border-radius: 15px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
         }
 
         .project-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             color: #ffffff;
         }
 
         .project-card p {
             color: #9ca3af;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             line-height: 1.6;
         }
 
@@ -382,31 +368,29 @@
             color: #c4b5fd;
         }
 
-        /* Booking Section */
         .booking-content {
             text-align: center;
-            max-width: 600px;
+            max-width: 550px;
             margin: 0 auto;
         }
 
         .booking-content p {
             font-size: 1.1rem;
             color: #d1d5db;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
-        /* Contact Section */
         .contact-content {
             text-align: center;
-            max-width: 600px;
+            max-width: 550px;
             margin: 0 auto;
         }
 
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
         }
 
         .contact-link {
@@ -416,38 +400,37 @@
             gap: 0.5rem;
             color: #d1d5db;
             text-decoration: none;
-            padding: 1rem 1.5rem;
+            padding: 0.8rem 1.2rem;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 15px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
-            min-width: 120px;
+            min-width: 100px;
         }
 
         .contact-icon {
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
 
         .contact-text {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
-        .contact-link:hover {
+        .contact-link:hover,
+        .contact-link:focus {
             background: rgba(59, 130, 246, 0.2);
             border-color: rgba(59, 130, 246, 0.5);
             transform: translateY(-3px);
         }
 
-        /* Footer */
         footer {
-            padding: 2rem 0;
+            padding: 1.5rem 0;
             text-align: center;
             color: #6b7280;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 4rem;
+            margin-top: 3rem;
         }
 
-        /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -460,19 +443,42 @@
             }
         }
 
+        @keyframes fadeText {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
         .fade-in {
             animation: fadeInUp 0.8s ease-out;
         }
 
-        /* Responsive */
+        .fade-text {
+            animation: fadeText 0.3s ease-in-out;
+        }
+
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 0.8rem;
+                padding: 1rem;
             }
 
             .nav-links {
-                gap: 1rem;
+                gap: 0.8rem;
+            }
+
+            .language-switcher {
+                margin-left: 0;
+                justify-content: center;
             }
 
             .bio-content {
@@ -481,39 +487,20 @@
             }
 
             .bio-image {
-                width: 300px;
-                height: 300px;
-                border-radius: 20px;
-                background-size: cover;
-                background-position: center;
-                background-blend-mode: overlay;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 6rem;
-                color: white;
-                margin: 0 auto;
-                box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
-                position: relative;
-                overflow: hidden;
-            }
-
-            .bio-image span {
-                position: relative;
-                z-index: 2;
+                width: 250px;
+                height: 250px;
             }
 
             .contact-links {
                 flex-direction: row;
                 flex-wrap: wrap;
-                justify-content: center;
                 gap: 1rem;
             }
 
             .projects-links {
                 flex-direction: column;
                 align-items: center;
-                gap: 0.5rem;
+                gap: 0.4rem;
             }
 
             .projects-grid {
@@ -526,14 +513,13 @@
 <body>
     <div class="bg-animation"></div>
 
-    <!-- Subtle project links header -->
     <div class="projects-header">
         <div class="container">
             <div class="projects-links">
-                <a href="https://blog.geekship.org" target="_blank">blog.geekship.org</a>
-                <a href="https://geekship.org" target="_blank">geekship.org</a>
-                <a href="https://soil.geekship.org" target="_blank">soil.geekship.org</a>
-                <a href="https://arbolis.tv" target="_blank">arbolis.tv</a>
+                <a href="https://blog.geekship.org" target="_blank" rel="noopener">blog.geekship.org</a>
+                <a href="https://geekship.org" target="_blank" rel="noopener">geekship.org</a>
+                <a href="https://soil.geekship.org" target="_blank" rel="noopener">soil.geekship.org</a>
+                <a href="https://arbolis.tv" target="_blank" rel="noopener">arbolis.tv</a>
             </div>
         </div>
     </div>
@@ -542,18 +528,21 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">solo.geekship</div>
-                <nav>
+                <nav aria-label="Main navigation">
                     <ul class="nav-links">
-                        <li><a href="#bio" id="nav-about">About</a></li>
-                        <li><a href="#projects" id="nav-projects">Projects</a></li>
-                        <li><a href="#booking" id="nav-book">Book</a></li>
-                        <li><a href="#contact" id="nav-contact">Contact</a></li>
+                        <li><a href="#bio" id="nav-about" aria-label="About section">About</a></li>
+                        <li><a href="#projects" id="nav-projects" aria-label="Projects section">Projects</a></li>
+                        <li><a href="#booking" id="nav-book" aria-label="Book a consultation">Book</a></li>
+                        <li><a href="#contact" id="nav-contact" aria-label="Contact section">Contact</a></li>
                     </ul>
                 </nav>
-                <div class="language-switcher">
-                    <span class="language-flag selected-language" data-lang="en">🇺🇸</span>
-                    <span class="language-flag" data-lang="sk">🇸🇰</span>
-                    <span class="language-flag" data-lang="de">🇩🇪</span>
+                <div class="language-switcher" role="group" aria-label="Language selection">
+                    <span class="language-flag selected-language" data-lang="en" tabindex="0" role="button"
+                        aria-label="Switch to English">🇺🇸</span>
+                    <span class="language-flag" data-lang="sk" tabindex="0" role="button"
+                        aria-label="Switch to Slovak">🇸🇰</span>
+                    <span class="language-flag" data-lang="de" tabindex="0" role="button"
+                        aria-label="Switch to German">🇩🇪</span>
                 </div>
             </div>
         </div>
@@ -566,7 +555,8 @@
                 <h1 id="hero-title">Martin Vavrovič</h1>
                 <p id="hero-subtitle">Web Developer & AI Specialist crafting innovative solutions for the modern world
                 </p>
-                <a href="#contact" class="cta-button" id="hero-cta">Let's do something!</a>
+                <a href="#contact" class="cta-button" id="hero-cta" aria-label="Contact me to start a project">Let's do
+                    something!</a>
             </div>
         </section>
 
@@ -574,31 +564,23 @@
             <div class="container">
                 <h2 class="section-title" id="bio-section-title">About Me</h2>
                 <div class="bio-content">
-                    <div class="bio-image">
-                    </div>
+                    <div class="bio-image" role="img" aria-label="Profile image"></div>
                     <div class="bio-text">
                         <p id="bio-text-1">Born in Nitra, Slovakia, I'm a passionate developer with over 15 years of
-                            experience building
-                            web applications and exploring cutting-edge technologies. My journey spans from C++
-                            development to modern React applications and beyond, with a special focus on AI integration
-                            and
-                            sustainable technology solutions.</p>
-
+                            experience building web applications and exploring cutting-edge technologies. My journey
+                            spans from C++ development to modern React applications and beyond, with a special focus on
+                            AI integration and sustainable technology solutions.</p>
                         <p id="bio-text-2">I've worked across diverse industries - from payroll systems in Austria to
-                            mobile apps for
-                            major German media companies, and most recently Carbon Farming and
-                            contributing to <a href="https://www.litefarm.org">LiteFarm</a>.</p>
-
+                            mobile apps for major German media companies, and most recently Carbon Farming and
+                            contributing to <a href="https://www.litefarm.org" target="_blank"
+                                rel="noopener">LiteFarm</a>.</p>
                         <p id="bio-text-3">My interests lie at the intersection of technology and sustainability,
-                            including AI,
-                            renewable energy, AgTech, and water efficiency solutions. Beyond pure development, I explore
-                            libertarian philosophy through my Geekship platform, work on alternative innovation systems
-                            through SOIL (Scalable Open Innovation Lab), and create content for Arbolis - a TV show and
-                            book project that ties it together.</p>
-
+                            including AI, renewable energy, AgTech, and water efficiency solutions. Beyond pure
+                            development, I explore libertarian philosophy through my Geekship platform, work on
+                            alternative innovation systems through SOIL (Scalable Open Innovation Lab), and create
+                            content for Arbolis - a TV show and book project that ties it together.</p>
                         <p id="bio-text-4">I'm always excited to take on projects that combine technical excellence with
                             positive impact!</p>
-
                         <div class="tech-stack">
                             <span class="tech-tag">JavaScript</span>
                             <span class="tech-tag">React.js</span>
@@ -615,59 +597,53 @@
                 <h2 class="section-title" id="projects-section-title">Projects / Interests</h2>
                 <div class="projects-grid">
                     <div class="project-card">
-                        <div class="project-icon"></div>
+                        <div class="project-icon">🗽</div>
                         <h3 id="project1-title">Geekship.org</h3>
                         <p id="project1-description">My libertarian philosophy outlet where I explore ideas about
-                            freedom, technology, and
-                            society. Writing and sharing thoughts on how technology can enhance individual liberty and
-                            social progress.</p>
+                            freedom, technology, and society. Writing and sharing thoughts on how technology can enhance
+                            individual liberty and social progress.</p>
                         <div class="project-tags">
                             <span class="project-tag">Philosophy</span>
                             <span class="project-tag">Writing</span>
                             <span class="project-tag">Libertarian</span>
                         </div>
                     </div>
-
                     <div class="project-card">
                         <div class="project-icon">💡</div>
                         <h3 id="project2-title">SOIL - Scalable Open Innovation Lab</h3>
                         <p id="project2-description">Developing an alternative patent system that promotes open
-                            innovation while protecting
-                            creators. Exploring new models for intellectual property that scale with modern
-                            collaborative development.</p>
+                            innovation while protecting creators. Exploring new models for intellectual property that
+                            scale with modern collaborative development.</p>
                         <div class="project-tags">
                             <span class="project-tag">Innovation</span>
                             <span class="project-tag">IP Systems</span>
                             <span class="project-tag">Open Source</span>
                         </div>
                     </div>
-
                     <div class="project-card">
                         <div class="project-icon">📺</div>
                         <h3 id="project3-title">Arbolis TV & Book</h3>
                         <p id="project3-description">Creating content that bridges technology and storytelling. Working
-                            on a TV show concept and
-                            accompanying book that explores how technology shapes human relationships and society.</p>
+                            on a TV show concept and accompanying book that explores how technology shapes human
+                            relationships and society.</p>
                         <div class="project-tags">
                             <span class="project-tag">Content Creation</span>
                             <span class="project-tag">Storytelling</span>
                             <span class="project-tag">Media</span>
                         </div>
                     </div>
-
                     <div class="project-card">
                         <div class="project-icon">🌱</div>
                         <h3 id="project4-title">Sustainable living technologies</h3>
                         <p id="project4-description">Developing sustainable agriculture solutions using open-source
-                            technologies. Contributing
-                            German localization to LiteFarm.org and building tools for carbon credit tracking.</p>
+                            technologies. Contributing German localization to LiteFarm.org and building tools for carbon
+                            credit tracking.</p>
                         <div class="project-tags">
                             <span class="project-tag">React</span>
                             <span class="project-tag">Open Source</span>
                             <span class="project-tag">AgTech</span>
                         </div>
                     </div>
-
                     <div class="project-card">
                         <div class="project-icon">🎓</div>
                         <h3 id="project5-title">Coding Education</h3>
@@ -679,26 +655,24 @@
                             <span class="project-tag">SQL</span>
                         </div>
                     </div>
-
                     <div class="project-card">
                         <div class="project-icon">🚀</div>
                         <h3 id="project6-title">AI Integration</h3>
                         <p id="project6-description">Exploring the integration of AI technologies into web applications.
-                            Building tools that
-                            leverage machine learning for better user experiences and business insights.</p>
+                            Building tools that leverage machine learning for better user experiences and business
+                            insights.</p>
                         <div class="project-tags">
                             <span class="project-tag">AI/ML</span>
                             <span class="project-tag">Python</span>
                             <span class="project-tag">APIs</span>
                         </div>
                     </div>
-
                     <div class="project-card">
                         <div class="project-icon">🔗</div>
                         <h3 id="project7-title">Blockchain Exploration</h3>
                         <p id="project7-description">Researching blockchain applications for sustainable technology and
-                            carbon credit systems.
-                            Exploring decentralized solutions for environmental impact tracking.</p>
+                            carbon credit systems. Exploring decentralized solutions for environmental impact tracking.
+                        </p>
                         <div class="project-tags">
                             <span class="project-tag">Blockchain</span>
                             <span class="project-tag">Web3</span>
@@ -714,10 +688,9 @@
                 <h2 class="section-title" id="booking-section-title">Book a Consultation</h2>
                 <div class="booking-content">
                     <p id="booking-text">Interested in discussing your project or learning more about how I can help?
-                        Book a free
-                        15-minute consultation call.</p>
-                    <a href="https://tidycal.com/ranmacar" class="cta-button" target="_blank" id="booking-button">Book
-                        Now</a>
+                        Book a free 15-minute consultation call.</p>
+                    <a href="https://tidycal.com/ranmacar" class="cta-button" target="_blank" rel="noopener"
+                        id="booking-button">Book Now</a>
                 </div>
             </div>
         </section>
@@ -727,28 +700,35 @@
                 <h2 class="section-title" id="contact-section-title">Connect!</h2>
                 <div class="contact-content">
                     <p id="contact-text">Ready to bring your ideas to life? Whether you need a modern web application,
-                        AI integration, or
-                        sustainable tech solutions, I'm here to help.</p>
+                        AI integration, or sustainable tech solutions, I'm here to help.</p>
                     <div class="contact-links">
-                        <a href="mailto:martin.vavrovic@gmail.com" class="contact-link" id="contact-email">
-                            <span class="contact-icon"><img src="https://img.icons8.com/color/48/000000/email.png"
-                                    alt="Email" width="32" height="32"></span> <span class="contact-text">Email</span>
+                        <a href="mailto:martin.vavrovic@gmail.com" class="contact-link" id="contact-email"
+                            aria-label="Email me">
+                            <span class="contact-icon"><img loading="lazy"
+                                    src="https://img.icons8.com/color/48/000000/email.png" alt="Email" width="32"
+                                    height="32"></span>
+                            <span class="contact-text">Email</span>
                         </a>
                         <a href="https://linkedin.com/in/martin-vavrovic" class="contact-link" target="_blank"
-                            id="contact-linkedin">
-                            <span class="contact-icon"><img
+                            rel="noopener" id="contact-linkedin" aria-label="Visit my LinkedIn profile">
+                            <span class="contact-icon"><img loading="lazy"
                                     src="https://static.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico"
-                                    alt="LinkedIn" width="32" height="32"></span> <span
-                                class="contact-text">LinkedIn</span>
+                                    alt="LinkedIn" width="32" height="32"></span>
+                            <span class="contact-text">LinkedIn</span>
                         </a>
-                        <a href="https://github.com/ranmacar" class="contact-link" target="_blank" id="contact-github">
-                            <span class="contact-icon"><img src="https://github.githubassets.com/favicon.ico"
-                                    alt="GitHub" width="32" height="32"></span> <span class="contact-text">GitHub</span>
+                        <a href="https://github.com/ranmacar" class="contact-link" target="_blank" rel="noopener"
+                            id="contact-github" aria-label="Visit my GitHub profile">
+                            <span class="contact-icon"><img loading="lazy"
+                                    src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                                    alt="GitHub" width="32" height="32"></span>
+                            <span class="contact-text">GitHub</span>
                         </a>
-                        <a href="https://x.com/Ranmacar" class="contact-link" target="_blank" id="contact-twitter">
-                            <span class="contact-icon"><img src="https://abs.twimg.com/favicons/twitter.ico"
-                                    alt="X/Twitter" width="32" height="32"></span> <span
-                                class="contact-text">X/Twitter</span>
+                        <a href="https://x.com/Ranmacar" class="contact-link" target="_blank" rel="noopener"
+                            id="contact-twitter" aria-label="Visit my X/Twitter profile">
+                            <span class="contact-icon"><img loading="lazy"
+                                    src="https://abs.twimg.com/favicons/twitter.3.ico" alt="X/Twitter" width="32"
+                                    height="32"></span>
+                            <span class="contact-text">X/Twitter</span>
                         </a>
                     </div>
                 </div>
@@ -758,12 +738,11 @@
 
     <footer>
         <div class="container">
-            <p id="footer-text">&copy; 2025 Martin Vavrovic. Building the future, one line of code at a time.</p>
+            <p id="footer-text">© 2025 Martin Vavrovic. Building the future, one line of code at a time.</p>
         </div>
     </footer>
 
     <script>
-        // Translations object
         const translations = {
             en: {
                 'page-title': 'Martin Vavrovic - Web Dev & AI Freelancer',
@@ -775,7 +754,7 @@
                 'hero-cta': 'Let\'s do something!',
                 'bio-section-title': 'About Me',
                 'bio-text-1': 'Born in Nitra, Slovakia, I\'m a passionate developer with over 15 years of experience building web applications and exploring cutting-edge technologies. My journey spans from C++ development to modern React applications and beyond, with a special focus on AI integration and sustainable technology solutions.',
-                'bio-text-2': 'I\'ve worked across diverse industries - from payroll systems in Austria to mobile apps for major German media companies, and most recently Carbon Farming and contributing to <a href="https://www.litefarm.org">LiteFarm</a>.',
+                'bio-text-2': 'I\'ve worked across diverse industries - from payroll systems in Austria to mobile apps for major German media companies, and most recently Carbon Farming and contributing to <a href="https://www.litefarm.org" target="_blank" rel="noopener">LiteFarm</a>.',
                 'bio-text-3': 'My interests lie at the intersection of technology and sustainability, including AI, renewable energy, AgTech, and water efficiency solutions. Beyond pure development, I explore libertarian philosophy through my Geekship platform, work on alternative innovation systems through SOIL (Scalable Open Innovation Lab), and create content for Arbolis - a TV show and book project that ties it together.',
                 'bio-text-4': 'I\'m always excited to take on projects that combine technical excellence with positive impact!',
                 'projects-section-title': 'Projects / Interests',
@@ -798,11 +777,11 @@
                 'booking-button': 'Book Now',
                 'contact-section-title': 'Connect!',
                 'contact-text': 'Ready to bring your ideas to life? Whether you need a modern web application, AI integration, or sustainable tech solutions, I\'m here to help.',
-                'contact-email': '<span class="contact-icon"><img src="https://img.icons8.com/color/48/000000/email.png" alt="Email" width="32" height="32"></span> <span class="contact-text">Email</span>',
-                'contact-linkedin': '<span class="contact-icon"><img src="https://static.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico" alt="LinkedIn" width="32" height="32"></span> <span class="contact-text">LinkedIn</span>',
-                'contact-github': '<span class="contact-icon"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="32" height="32"></span> <span class="contact-text">GitHub</span>',
-                'contact-twitter': '<span class="contact-icon">𝕏</span> <span class="contact-text">X/Twitter</span>',
-                'footer-text': '&copy; 2025 Martin Vavrovic. Building the future, one line of code at a time.'
+                'contact-email': '<span class="contact-icon"><img loading="lazy" src="https://img.icons8.com/color/48/000000/email.png" alt="Email" width="32" height="32"></span> <span class="contact-text">Email</span>',
+                'contact-linkedin': '<span class="contact-icon"><img loading="lazy" src="https://static.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico" alt="LinkedIn" width="32" height="32"></span> <span class="contact-text">LinkedIn</span>',
+                'contact-github': '<span class="contact-icon"><img loading="lazy" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="32" height="32"></span> <span class="contact-text">GitHub</span>',
+                'contact-twitter': '<span class="contact-icon"><img loading="lazy" src="https://abs.twimg.com/favicons/twitter.3.ico" alt="X/Twitter" width="32" height="32"></span> <span class="contact-text">X/Twitter</span>',
+                'footer-text': '© 2025 Martin Vavrovic. Building the future, one line of code at a time.'
             },
             sk: {
                 'page-title': 'Martin Vavrovič - Webový vývojár & AI špecialista',
@@ -814,7 +793,7 @@
                 'hero-cta': 'Poďme na to!',
                 'bio-section-title': 'O mne',
                 'bio-text-1': 'Pochádzam z Nitry a som zanietený vývojár s vyše 15-ročnými skúsenosťami v tvorbe webových aplikácií a práci s najmodernejšími technológiami. Moja profesionálna cesta vedie od programovania v C++ až po súčasné React aplikácie, pričom sa špecializujem na integráciu umelej inteligencie a udržateľné technologické riešenia.',
-                'bio-text-2': 'Pôsobil som v rozmanitých odvetviach – od mzdových systémov v Rakúsku cez mobilné aplikácie pre popredné nemecké mediálne spoločnosti až po nedávne projekty v oblasti uhlíkového hospodárenia a prispievanie do projektu <a href="https://www.litefarm.org">LiteFarm</a>.',
+                'bio-text-2': 'Pôsobil som v rozmanitých odvetviach – od mzdových systémov v Rakúsku cez mobilné aplikácie pre popredné nemecké mediálne spoločnosti až po nedávne projekty v oblasti uhlíkového hospodárenia a prispievanie do projektu <a href="https://www.litefarm.org" target="_blank" rel="noopener">LiteFarm</a>.',
                 'bio-text-3': 'Zaujímam sa o prepojenie technológií a udržateľnosti, vrátane umelej inteligencie, obnoviteľných zdrojov energie, agrotechnológií a riešení pre efektívne hospodárenie s vodou. Okrem samotného programovania sa venujem libertariánskej filozofii cez platformu Geekship, pracujem na alternatívnych inovačných systémoch v rámci SOIL (Škálovateľné otvorené inovačné laboratórium) a tvorím obsah pre Arbolis – televízny projekt a knihu, ktoré všetko prepájajú.',
                 'bio-text-4': 'Vždy ma nadchnú projekty, ktoré kombinujú technickú dokonalosť s pozitívnym vplyvom na svet!',
                 'projects-section-title': 'Projekty a záujmy',
@@ -837,11 +816,11 @@
                 'booking-button': 'Objednať',
                 'contact-section-title': 'Spojme sa!',
                 'contact-text': 'Ste pripravení premeniť svoje nápady na realitu? Či už potrebujete modernú webovú aplikáciu, integráciu AI alebo udržateľné technologické riešenia, rád vám pomôžem.',
-                'contact-email': '<span class="contact-icon"><img src="https://img.icons8.com/color/48/000000/email.png" alt="Email" width="32" height="32"></span> <span class="contact-text">E-mail</span>',
-                'contact-linkedin': '<span class="contact-icon"><img src="https://static.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico" alt="LinkedIn" width="32" height="32"></span> <span class="contact-text">LinkedIn</span>',
-                'contact-github': '<span class="contact-icon"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="32" height="32"></span> <span class="contact-text">GitHub</span>',
-                'contact-twitter': '<span class="contact-icon">𝕏</span> <span class="contact-text">X/Twitter</span>',
-                'footer-text': '&copy; 2025 Martin Vavrovič. Tvoríme budúcnosť, riadok kódu po riadku.'
+                'contact-email': '<span class="contact-icon"><img loading="lazy" src="https://img.icons8.com/color/48/000000/email.png" alt="Email" width="32" height="32"></span> <span class="contact-text">E-mail</span>',
+                'contact-linkedin': '<span class="contact-icon"><img loading="lazy" src="https://static.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico" alt="LinkedIn" width="32" height="32"></span> <span class="contact-text">LinkedIn</span>',
+                'contact-github': '<span class="contact-icon"><img loading="lazy" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="32" height="32"></span> <span class="contact-text">GitHub</span>',
+                'contact-twitter': '<span class="contact-icon"><img loading="lazy" src="https://abs.twimg.com/favicons/twitter.3.ico" alt="X/Twitter" width="32" height="32"></span> <span class="contact-text">X/Twitter</span>',
+                'footer-text': '© 2025 Martin Vavrovič. Tvoríme budúcnosť, riadok kódu po riadku.'
             },
             de: {
                 'page-title': 'Martin Vavrovic - Webentwickler & KI-Spezialist',
@@ -853,7 +832,7 @@
                 'hero-cta': 'Lassen Sie uns loslegen!',
                 'bio-section-title': 'Über mich',
                 'bio-text-1': 'Geboren in Nitra, Slowakei, ein leidenschaftlicher Entwickler mit über 15 Jahren Erfahrung in der Webentwicklung und der Arbeit mit modernsten Technologien. Mein Werdegang führte mich von der C++-Programmierung zu modernen React-Anwendungen, wobei ich mich besonders auf KI-Integration und nachhaltige Technologielösungen spezialisiert habe.',
-                'bio-text-2': 'Ich habe in verschiedensten Branchen gearbeitet – von Lohnabrechnungssystemen in Österreich über mobile Apps für führende deutsche Medienunternehmen bis hin zu aktuellen Projekten im Bereich Carbon Farming und meiner Mitarbeit bei <a href="https://www.litefarm.org">LiteFarm</a>.',
+                'bio-text-2': 'Ich habe in verschiedensten Branchen gearbeitet – von Lohnabrechnungssystemen in Österreich über mobile Apps für führende deutsche Medienunternehmen bis hin zu aktuellen Projekten im Bereich Carbon Farming und meiner Mitarbeit bei <a href="https://www.litefarm.org" target="_blank" rel="noopener">LiteFarm</a>.',
                 'bio-text-3': 'Meine Leidenschaft gilt der Verbindung von Technologie und Nachhaltigkeit, einschließlich KI, erneuerbaren Energien, AgTech und wassersparenden Lösungen. Neben der Softwareentwicklung beschäftige ich mich mit libertärer Philosophie auf meiner Geekship-Plattform, arbeite an alternativen Innovationssystemen durch SOIL (Skalierbares offenes Innovationslabor) und entwickle Inhalte für Arbolis – ein TV- und Buchprojekt, das alles miteinander verbindet.',
                 'bio-text-4': 'Ich begeistere mich besonders für Projekte, die technische Exzellenz mit positiver gesellschaftlicher Wirkung vereinen!',
                 'projects-section-title': 'Projekte und Interessen',
@@ -876,33 +855,37 @@
                 'booking-button': 'Termin vereinbaren',
                 'contact-section-title': 'Kontaktieren Sie mich!',
                 'contact-text': 'Bereit, Ihre Ideen Wirklichkeit werden zu lassen? Ob moderne Webanwendung, KI-Integration oder nachhaltige Technologielösungen – ich unterstütze Sie gerne.',
-                'contact-email': '<span class="contact-icon"><img src="https://img.icons8.com/color/48/000000/email.png" alt="Email" width="32" height="32"></span> <span class="contact-text">E-Mail</span>',
-                'contact-linkedin': '<span class="contact-icon"><img src="https://static.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico" alt="LinkedIn" width="32" height="32"></span> <span class="contact-text">LinkedIn</span>',
-                'contact-github': '<span class="contact-icon"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="32" height="32"></span> <span class="contact-text">GitHub</span>',
-                'contact-twitter': '<span class="contact-icon">𝕏</span> <span class="contact-text">X/Twitter</span>',
-                'footer-text': '&copy; 2025 Martin Vavrovic. Wir gestalten die Zukunft – Zeile für Zeile.'
+                'contact-email': '<span class="contact-icon"><img loading="lazy" src="https://img.icons8.com/color/48/000000/email.png" alt="Email" width="32" height="32"></span> <span class="contact-text">E-Mail</span>',
+                'contact-linkedin': '<span class="contact-icon"><img loading="lazy" src="https://static.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico" alt="LinkedIn" width="32" height="32"></span> <span class="contact-text">LinkedIn</span>',
+                'contact-github': '<span class="contact-icon"><img loading="lazy" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="32" height="32"></span> <span class="contact-text">GitHub</span>',
+                'contact-twitter': '<span class="contact-icon"><img loading="lazy" src="https://abs.twimg.com/favicons/twitter.3.ico" alt="X/Twitter" width="32" height="32"></span> <span class="contact-text">X/Twitter</span>',
+                'footer-text': '© 2025 Martin Vavrovic. Wir gestalten die Zukunft – Zeile für Zeile.'
             }
         };
 
-        // Function to update text content based on language with staggered word-by-word replacement animation
         function updateContent(lang) {
             const elementsToTranslate = translations[lang];
-
-            Object.entries(elementsToTranslate).forEach(([id, targetText], index) => {
+            Object.entries(elementsToTranslate).forEach(([id, targetText]) => {
                 const element = document.getElementById(id);
                 if (element) {
-                    element.innerHTML = targetText; // Clear existing content
+                    element.classList.add('fade-text');
+                    setTimeout(() => {
+                        element.innerHTML = targetText;
+                        element.classList.remove('fade-text');
+                    }, 150);
                 }
             });
 
-            // Update the title tag separately with a staggered delay
             const titleElement = document.getElementById('page-title');
             if (titleElement && translations[lang]['page-title']) {
-                titleElement.textContent = translations[lang]['page-title'];
+                titleElement.classList.add('fade-text');
+                setTimeout(() => {
+                    titleElement.textContent = translations[lang]['page-title'];
+                    titleElement.classList.remove('fade-text');
+                }, 150);
             }
         }
 
-        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -916,7 +899,15 @@
             });
         });
 
-        // Add fade-in animation on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -926,47 +917,41 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
-        // Observe project cards and sections
         document.querySelectorAll('.project-card, .section').forEach(el => {
             observer.observe(el);
         });
 
-        // Add interactive hover effects to project cards
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mouseenter', function () {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
-            });
-
-            card.addEventListener('mouseleave', function () {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-
-        // Language switcher functionality
         document.querySelectorAll('.language-flag').forEach(flag => {
             flag.addEventListener('click', function () {
-                // Remove selected class from all flags
-                document.querySelectorAll('.language-flag').forEach(f => f.classList.remove('selected-language'));
-
-                // Add selected class to the clicked flag
-                this.classList.add('selected-language');
-
-                // Change the language of the html tag
-                const selectedLang = this.getAttribute('data-lang');
-                document.documentElement.lang = selectedLang;
-
-                // Update content based on selected language
-                updateContent(selectedLang);
-
-                // Optional: Store selected language in local storage
-                localStorage.setItem('selectedLanguage', selectedLang);
+                setLanguage(this);
+            });
+            flag.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setLanguage(this);
+                }
             });
         });
 
+        function setLanguage(flag) {
+            document.querySelectorAll('.language-flag').forEach(f => f.classList.remove('selected-language'));
+            flag.classList.add('selected-language');
+            const selectedLang = flag.getAttribute('data-lang');
+            document.documentElement.lang = selectedLang;
+            updateContent(selectedLang);
+            localStorage.setItem('selectedLanguage', selectedLang);
+        }
+
+        const savedLang = localStorage.getItem('selectedLanguage') || 'en';
+        const initialFlag = document.querySelector(`.language-flag[data-lang="${savedLang}"]`);
+        if (initialFlag) {
+            setLanguage(initialFlag);
+        }
     </script>
 </body>
 
