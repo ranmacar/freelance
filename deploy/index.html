@@ -319,13 +319,23 @@
             border-radius: 20px;
             padding: 1.5rem;
             transition: all 0.3s ease;
-            cursor: pointer;
+            display: flex;
+            flex-direction: column;
         }
 
-        .project-card:hover {
+        a.project-card {
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+            border-color: rgba(59, 130, 246, 0.25);
+        }
+
+        .project-card:hover,
+        a.project-card:focus-visible {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             border-color: rgba(59, 130, 246, 0.5);
+            outline: none;
         }
 
         .project-icon {
@@ -338,6 +348,18 @@
             justify-content: center;
             font-size: 1.4rem;
             margin-bottom: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .project-icon--brand {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .project-icon svg {
+            width: 32px;
+            height: 32px;
+            display: block;
         }
 
         .project-card h3 {
@@ -366,6 +388,24 @@
             border-radius: 15px;
             font-size: 0.8rem;
             color: #c4b5fd;
+        }
+
+        .project-card-cta {
+            margin-top: auto;
+            padding-top: 1.1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #60a5fa;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        a.project-card:hover .project-card-cta,
+        a.project-card:focus-visible .project-card-cta {
+            color: #93c5fd;
+            transform: translateX(3px);
         }
 
         .booking-content {
@@ -498,9 +538,8 @@
             }
 
             .projects-links {
-                flex-direction: column;
-                align-items: center;
-                gap: 0.4rem;
+                flex-wrap: wrap;
+                gap: 1rem;
             }
 
             .projects-grid {
@@ -512,6 +551,15 @@
 
 <body>
     <div class="bg-animation"></div>
+
+    <div class="projects-header">
+        <div class="container">
+            <div class="projects-links">
+                <a href="https://hexiles.store" target="_blank" rel="noopener noreferrer">hexiles.store</a>
+                <a href="https://ranmacar.github.io/aftermath/" target="_blank" rel="noopener noreferrer">aftermath</a>
+            </div>
+        </div>
+    </div>
 
     <header>
         <div class="container">
@@ -585,6 +633,55 @@
             <div class="container">
                 <h2 class="section-title" id="projects-section-title">Projects / Interests</h2>
                 <div class="projects-grid">
+                    <a class="project-card" href="https://hexiles.store" target="_blank" rel="noopener noreferrer">
+                        <div class="project-icon project-icon--brand" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32">
+                                <polygon points="32,3 57.1,17.5 57.1,46.5 32,61 6.9,46.5 6.9,17.5" fill="#3A3E44" />
+                                <polygon points="32,7.5 53.2,19.75 53.2,44.25 32,56.5 10.8,44.25 10.8,19.75"
+                                    fill="#E9E4DA" />
+                                <g fill="none" stroke-linecap="butt">
+                                    <g stroke="#9C7C3C" stroke-width="4.2" transform="translate(0,.6)">
+                                        <circle cx="32" cy="32" r="10.2" />
+                                        <path d="M32 19.3v25.4M19.3 32h25.4" />
+                                    </g>
+                                    <g stroke="#C9A45C" stroke-width="3.2">
+                                        <circle cx="32" cy="32.4" r="10.2" />
+                                        <path d="M32 19.9v25M19.3 32.4h25.4" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <h3 id="project-hexiles-title">Hexiles</h3>
+                        <p id="project-hexiles-description">A universal system of 19 dual-sided hexagonal tokens per
+                            colour for abstract strategy games — from Chess, Xiangqi, and Tafl to Veil, an original
+                            hidden-information game. Playable in the browser and open for pre-order.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Game Design</span>
+                            <span class="project-tag">Strategy</span>
+                            <span class="project-tag">Browser Play</span>
+                        </div>
+                        <span class="project-card-cta" id="project-hexiles-link">Visit hexiles.store ↗</span>
+                    </a>
+                    <a class="project-card" href="https://ranmacar.github.io/aftermath/" target="_blank"
+                        rel="noopener noreferrer">
+                        <div class="project-icon project-icon--brand" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+                                <path d="M16 2l12 7v14l-12 7-12-7V9z" fill="#18201B" stroke="#E9A94B"
+                                    stroke-width="1.2" />
+                                <rect x="14" y="9" width="4" height="14" fill="#E9A94B" />
+                            </svg>
+                        </div>
+                        <h3 id="project-aftermath-title">Aftermath</h3>
+                        <p id="project-aftermath-description">A slow open-source browser game on the real map, set in
+                            the Arbolis story world. Wake a buried seed pod after the grid goes dark, grow a midrise
+                            tower, and tend one hex of living land until it feeds people again.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Browser Game</span>
+                            <span class="project-tag">Open Source</span>
+                            <span class="project-tag">Arbolis</span>
+                        </div>
+                        <span class="project-card-cta" id="project-aftermath-link">Explore Aftermath ↗</span>
+                    </a>
                     <div class="project-card">
                         <div class="project-icon">🗽</div>
                         <h3 id="project1-title">Geekship.org</h3>
@@ -747,6 +844,12 @@
                 'bio-text-3': 'My interests lie at the intersection of technology and sustainability, including AI, renewable energy, AgTech, and water efficiency solutions. Beyond pure development, I explore libertarian philosophy through my Geekship platform, work on alternative innovation systems through SOIL (Scalable Open Innovation Lab), and create content for Arbolis - a TV show and book project that ties it together.',
                 'bio-text-4': 'I\'m always excited to take on projects that combine technical excellence with positive impact!',
                 'projects-section-title': 'Projects / Interests',
+                'project-hexiles-title': 'Hexiles',
+                'project-hexiles-description': 'A universal system of 19 dual-sided hexagonal tokens per colour for abstract strategy games — from Chess, Xiangqi, and Tafl to Veil, an original hidden-information game. Playable in the browser and open for pre-order.',
+                'project-hexiles-link': 'Visit hexiles.store ↗',
+                'project-aftermath-title': 'Aftermath',
+                'project-aftermath-description': 'A slow open-source browser game on the real map, set in the Arbolis story world. Wake a buried seed pod after the grid goes dark, grow a midrise tower, and tend one hex of living land until it feeds people again.',
+                'project-aftermath-link': 'Explore Aftermath ↗',
                 'project1-title': 'Geekship.org',
                 'project1-description': 'My libertarian philosophy outlet where I explore ideas about freedom, technology, and society. Writing and sharing thoughts on how technology can enhance individual liberty and social progress.',
                 'project2-title': 'SOIL - Scalable Open Innovation Lab',
@@ -786,6 +889,12 @@
                 'bio-text-3': 'Zaujímam sa o prepojenie technológií a udržateľnosti, vrátane umelej inteligencie, obnoviteľných zdrojov energie, agrotechnológií a riešení pre efektívne hospodárenie s vodou. Okrem samotného programovania sa venujem libertariánskej filozofii cez platformu Geekship, pracujem na alternatívnych inovačných systémoch v rámci SOIL (Škálovateľné otvorené inovačné laboratórium) a tvorím obsah pre Arbolis – televízny projekt a knihu, ktoré všetko prepájajú.',
                 'bio-text-4': 'Vždy ma nadchnú projekty, ktoré kombinujú technickú dokonalosť s pozitívnym vplyvom na svet!',
                 'projects-section-title': 'Projekty a záujmy',
+                'project-hexiles-title': 'Hexiles',
+                'project-hexiles-description': 'Univerzálny systém 19 obojstranných šesťhranných kameňov na farbu pre abstraktné strategické hry – od šachu, xiangqi a taflu až po Veil, originálnu hru so skrytou informáciou. Hrateľné v prehliadači a otvorené na predobjednávky.',
+                'project-hexiles-link': 'Navštíviť hexiles.store ↗',
+                'project-aftermath-title': 'Aftermath',
+                'project-aftermath-description': 'Pomalá open-source hra v prehliadači na skutočnej mape zo sveta Arbolis. Prebuďte zakopaný semenný modul po výpadku siete, postavte vežu a premeňte jeden hex krajiny späť na živú farmu.',
+                'project-aftermath-link': 'Preskúmať Aftermath ↗',
                 'project1-title': 'Geekship.org',
                 'project1-description': 'Moja platforma pre libertariánsku filozofiu, kde skúmam myšlienky o slobode, technológiách a spoločnosti. Píšem a zdieľam úvahy o tom, ako môžu technológie posilniť osobnú slobodu a spoločenský pokrok.',
                 'project2-title': 'SOIL – Škálovateľné otvorené inovačné laboratórium',
@@ -825,6 +934,12 @@
                 'bio-text-3': 'Meine Leidenschaft gilt der Verbindung von Technologie und Nachhaltigkeit, einschließlich KI, erneuerbaren Energien, AgTech und wassersparenden Lösungen. Neben der Softwareentwicklung beschäftige ich mich mit libertärer Philosophie auf meiner Geekship-Plattform, arbeite an alternativen Innovationssystemen durch SOIL (Skalierbares offenes Innovationslabor) und entwickle Inhalte für Arbolis – ein TV- und Buchprojekt, das alles miteinander verbindet.',
                 'bio-text-4': 'Ich begeistere mich besonders für Projekte, die technische Exzellenz mit positiver gesellschaftlicher Wirkung vereinen!',
                 'projects-section-title': 'Projekte und Interessen',
+                'project-hexiles-title': 'Hexiles',
+                'project-hexiles-description': 'Ein universelles System aus 19 zweiseitigen Sechseck-Steinen pro Farbe für abstrakte Strategiespiele – von Schach, Xiangqi und Tafl bis zu Veil, einem eigenen Spiel mit verdeckter Information. Im Browser spielbar und vorbestellbar.',
+                'project-hexiles-link': 'hexiles.store besuchen ↗',
+                'project-aftermath-title': 'Aftermath',
+                'project-aftermath-description': 'Ein ruhiges Open-Source-Browserspiel auf der echten Weltkarte aus der Arbolis-Welt. Wecken Sie nach dem Stromausfall eine vergrabene Saat-Kapsel, lassen Sie einen Turm wachsen und verwandeln Sie ein Hex Land wieder in eine lebendige Farm.',
+                'project-aftermath-link': 'Aftermath entdecken ↗',
                 'project1-title': 'Geekship.org',
                 'project1-description': 'Meine Plattform für libertäre Philosophie, auf der ich Ideen über Freiheit, Technologie und Gesellschaft erkunde. Ich schreibe und teile Gedanken darüber, wie Technologie individuelle Freiheit und gesellschaftlichen Fortschritt fördern kann.',
                 'project2-title': 'SOIL – Skalierbares offenes Innovationslabor',
